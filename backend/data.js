@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var DataSchema = new Schema({
 	userID: {
 		id: Number,
-		"sequence_value": 0
+		sequence_value: 0
 	},
 	email: {
 		type: String,
