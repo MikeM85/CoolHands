@@ -13,7 +13,6 @@
 <!-- ## About This Application -->
 <!-- ## Motivation -->
 
-
 ## Wireframes
 ## Wireframe for Ordering a Document Delivery
 ![Landing Page](Images/Wireframe/HomePage.png?raw=true)
