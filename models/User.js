@@ -1,12 +1,12 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var DataSchema = new Schema({
-	userID: {
-		id: Number,
-		sequence_value: 0
+var UserSchema = new Schema({
+	displayname: {
+		type: String,
+		required: true,
 	},
-	email: {
+	username: {
 		type: String,
 		required: true,
 		unique: { index: { unique: true } }
@@ -15,33 +15,35 @@ var DataSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	firstName: {
+	email: {
+		type: String,
+		required: true,
+		unique: { index: { unique: true } },
+	},
+	city: {
 		type: String,
 		required: true,
 	},
-	lastName: {
+	stateName: {
 		type: String,
 		required: true,
 	},
-	phoneNum:{
+	profilePic: {
 		type: String,
-		required: true,
+		default: "https://picsum.photos/200",
 	},
-	// phoneNum: {
-	// 	type: String,
-	// 	default: "https://picsum.photos/200",
-	// },
-	// date: {
-	// 	type: Date,
-	// 	default: Date.now,
-	// },
-	// isVerified: {
-	// 	type: Boolean,
-	// 	default: false
+	date: {
+		type: Date,
+		default: Date.now,
+	},
+	isVerified: {
+		type: Boolean,
+		default: false
+	},
 	passwordResetToken: String,
 	passwordResetExpires: Date
 });
 
-var User = mongoose.model("Data", DataSchema);
+var User = mongoose.model("User", UserSchema);
 
 module.exports = User;
