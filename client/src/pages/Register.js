@@ -104,6 +104,7 @@ class Register extends Component {
 			city: this.state.city.trim(),
 			stateName: this.state.stateName.trim(),
 		};
+		console.log(newUser);
 		if (this.state.profilePic.length > 0) {
 			newUser.profilePic = this.state.profilePic;
 		}
@@ -114,6 +115,7 @@ class Register extends Component {
 					modalState: "show-modal",
 					message: results.data,
 				});
+				// console.log(data);
 			})
 			.catch(error => {
 				this.setState({
