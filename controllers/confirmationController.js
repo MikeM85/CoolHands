@@ -53,6 +53,7 @@ module.exports = {
                             pass: keys.secrets.sendgridpass
                         }
                     });
+                    
                     var mailOptions = {
                         from: "no-reply@foodbook223.com",
                         to: user.email,

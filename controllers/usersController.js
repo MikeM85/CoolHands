@@ -71,9 +71,9 @@ module.exports = {
 											}
 										});
 										var mailOptions = {
-											from: "no-reply@foodbook223.com",
+											from: "Something@gmail.com",
 											to: user.email,
-											subject: "FoodBook Account Verification",
+											subject: "Cool Hand Couriers",
 											text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/api\/confirmation\/' + token.token + '.\n'
 										};
 										   transporter.sendMail(mailOptions, error => {
