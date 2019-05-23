@@ -5,6 +5,7 @@ const routes = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const HOST = "0.0.0.0";
 
 // Defines middleware
 app.use(express.urlencoded({ extended: true }));
@@ -27,6 +28,6 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT,HOST, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
