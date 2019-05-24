@@ -19,7 +19,15 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/tester", { useNewUrlParser: true });
+const db = require("./config/keys").MONGODB_URI;
+
+mongoose.connect(
+  db, {
+      useNewUrlParser: true
+  }
+)
+.then(() => console.log("Connected to MongoDB"))
+.catch(err => console.log(err));
 
 //Passport Middleware
 app.use(passport.initialize());

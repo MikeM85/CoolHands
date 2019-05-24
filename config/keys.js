@@ -6,3 +6,8 @@ exports.secrets = {
     sendgridusername: process.env.sendgridusername,
     sendgridpass:  process.env.sendgridpass
 }
+
+module.exports = {
+    MONGODB_URI: "mongodb://localhost/tester",
+    secretOrKey: "secret"
+};
