@@ -37,5 +37,5 @@ require("./config/passport")(passport);
 
 // Start the API server
 app.listen(PORT,HOST, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!!!!`);
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!!!!!`);
 });
