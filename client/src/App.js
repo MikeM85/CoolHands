@@ -11,6 +11,7 @@ import PrivateRoute from "./components/common/PrivateRoute";
 
 
 import Landing from "./components/layout/Landing";
+import Navbar from "./components/layout/Navbar";
 
 
 import Register from "./pages/Register";
@@ -47,7 +48,7 @@ class App extends Component {
 				<Router>
 					<div className="App page-b">
 						<div className="dark-overlay">
-							
+						<Navbar />
 							<div className="container page-h">
 								<Switch>
 									<Route exact path="/" component={Landing} />
