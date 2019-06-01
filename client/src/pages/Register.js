@@ -104,18 +104,18 @@ class Register extends Component {
 			city: this.state.city.trim(),
 			stateName: this.state.stateName.trim(),
 		};
-		// console.log(newUser);
+		console.log(newUser);
 		if (this.state.profilePic.length > 0) {
 			newUser.profilePic = this.state.profilePic;
 		}
 		this.props
 			.registerUser(newUser, this.props.history)
 			.then(results => {
-				console.log(newUser);
 				this.setState({
 					modalState: "show-modal",
 					message: results.data,
 				});
+				
 			})
 			.catch(error => {
 				this.setState({

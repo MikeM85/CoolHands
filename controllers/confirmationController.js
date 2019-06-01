@@ -9,6 +9,7 @@ module.exports = {
                 errors.token = "Token Invalid";
                 return res.status(400).json(errors);
             }
+            console.log("user"+db.User);
             db.User.findOne({_id: token.UserId})
             .then(user => {
                 if (!user) {
@@ -55,10 +56,10 @@ module.exports = {
                     });
                     
                     var mailOptions = {
-                        from: "no-reply@foodbook223.com",
-                        to: user.email,
-                        subject: "FoodBook Account Verification",
-                        text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/api\/confirmation\/' + token.token + '.\n'
+                        from: "Something@gmail.com",
+											to: user.email,
+											subject: "Cool Hand Couriers",
+											text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/api\/confirmation\/' + token.token + '.\n'
                     };
                         transporter.sendMail(mailOptions, error => {
                         if (error) { 

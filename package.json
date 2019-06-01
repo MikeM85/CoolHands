@@ -4,6 +4,9 @@
 	"description": "",
 	"main": "server.js",
 	"scripts": {
+		"homepage": "https://MikeM85.github.io/CoolHands",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
 		"start:prod": "node server.js",
 		"start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -27,6 +30,7 @@
 		"bcryptjs": "^2.4.3",
 		"dotenv": "^7.0.0",
 		"express": "^4.17.0",
+		"gh-pages": "^2.0.1",
 		"if-env": "^1.0.4",
 		"jsonwebtoken": "^8.5.1",
 		"mongoose": "^5.5.10",

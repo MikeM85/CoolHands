@@ -140,12 +140,12 @@ module.exports = {
 									token: "Bearer " + token,
 								});
 							}
-						);
-					
-				});
-			})
-			.catch(errpr => res.status(422).json(error));
-	},
+							);
+							
+						});
+					})
+					.catch(errpr => res.status(422).json(error));
+				},
 	findById: function(req, res) {
 		db.User.findById(req.params.id)
 			.then(dbModel => res.json(dbModel))
