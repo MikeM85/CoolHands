@@ -17,6 +17,7 @@ class Profiles extends Component {
 		this.findReviews = this.findReviews.bind(this);
 		this.handleClick = this.handleClick.bind(this);
 		this.findFollowers = this.findFollowers.bind(this);
+		console.log("props"+props);
 	}
 
 	componentDidMount() {
@@ -142,7 +143,7 @@ class Profiles extends Component {
 					style={{ width: 100 + "%" }}
 				>
 					<h1>
-						<strong>Foodies</strong>
+						<strong>Cool</strong>
 					</h1>
 					<div className="d-flex flex-row" style={{ flex: 1 }}>
 						<Input

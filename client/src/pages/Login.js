@@ -61,7 +61,7 @@ class Login extends Component {
 								Log In
 							</h1>
 							<p className="lead text-center">
-								Sign in to your Cool Hands account
+								Sign in to your CoolHands account
 							</p>
 							<form onSubmit={this.onSubmit}>
 								<TextFieldGroup

@@ -71,9 +71,9 @@ module.exports = {
 											}
 										});
 										var mailOptions = {
-											from: "Something@gmail.com",
+											from: "no-reply@CoolHands.com",
 											to: user.email,
-											subject: "Cool Hand Couriers",
+											subject: "CoolHands Account Verification",
 											text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/api\/confirmation\/' + token.token + '.\n'
 										};
 										   transporter.sendMail(mailOptions, error => {

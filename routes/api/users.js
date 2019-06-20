@@ -10,7 +10,7 @@ router.route("/")
 
 // Matches with "/api/users/current"
 router.route("/current")
-  .get(passport.authenticate("jwt", {session: false}), (req, res) => {
+  .get(passport.authenticate(jwt, {session: false}), (req, res) => {
     res.json({
       id: req.user.id,
       name: req.user.name,

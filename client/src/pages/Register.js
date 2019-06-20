@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 //might not need withRouter
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -20,15 +21,20 @@ class Register extends Component {
 		errors: {},
 		modalState: "hide-modal",
 		message: "",
+		
 	};
 
+	
+
+	
 	// Check to see if logged in
 	componentDidMount() {
 		if (this.props.auth.isAuthenticated) {
 			this.props.history.push("/dashboard");
 		}
+		console.log("state"+Component);
 	}
-
+	
 	//redux
 	//test for errors property
 	//errors from component state
@@ -88,9 +94,11 @@ class Register extends Component {
 				let temperrors = this.state.errors;
 				temperrors.password2 = "";
 				this.setState({ errors: temperrors });
+				console.log("temperrors"+ temperrors);
 			}
 		}
 	};
+
 
 	//onSubmit
 	onSubmit = e => {
@@ -104,19 +112,20 @@ class Register extends Component {
 			city: this.state.city.trim(),
 			stateName: this.state.stateName.trim(),
 		};
-		// console.log(newUser);
+		console.log("newUser" + newUser);
 		if (this.state.profilePic.length > 0) {
 			newUser.profilePic = this.state.profilePic;
 		}
 		this.props
 			.registerUser(newUser, this.props.history)
 			.then(results => {
-				console.log(newUser);
 				this.setState({
 					modalState: "show-modal",
 					message: results.data,
 				});
 			})
+
+			// console.log("newUser"+newUser);
 			.catch(error => {
 				this.setState({
 					errors: error.response.data,
@@ -134,6 +143,7 @@ class Register extends Component {
 
 	render() {
 		const { errors } = this.state;
+		console.log("errors at render"+errors)
 
 		return (
 			<div className="register">
@@ -143,7 +153,7 @@ class Register extends Component {
 							<h1 className="display-4 text-center font-weight-bold white">
 								Sign Up
 							</h1>
-							<p className="lead text-center">Create your Cool Hands account</p>
+							<p className="lead text-center">Create your CoolHands account</p>
 							<form noValidate onSubmit={this.onSubmit}>
 								<div className="form-group">
 									<TextFieldGroup
@@ -259,8 +269,10 @@ Register.propTypes = {
 
 const mapStateToProps = state => ({
 	auth: state.auth,
-	errors: state.errors,
+	errors: state.errors
 });
+
+
 
 export default connect(
 	mapStateToProps,

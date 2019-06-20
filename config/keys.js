@@ -1,13 +1,8 @@
 exports.secrets = {
-    // YelpCLIENT_ID: process.env.YelpCLIENT_ID,
-    // YelpAPI_KEY: process.env.YelpAPI_KEY,
+    YelpCLIENT_ID: process.env.YelpCLIENT_ID,
+    YelpAPI_KEY: process.env.YelpAPI_KEY,
     secretOrKey: process.env.secretOrKey,
-    // GoogleAPI_KEY: process.env.GoogleAPI_KEY,
+    GoogleAPI_KEY: process.env.GoogleAPI_KEY,
     sendgridusername: process.env.sendgridusername,
     sendgridpass:  process.env.sendgridpass
 }
-
-module.exports = {
-    MONGODB_URI: "mongodb://localhost/tester",
-    secretOrKey: "secret"
-};

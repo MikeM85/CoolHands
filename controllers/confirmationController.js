@@ -53,11 +53,10 @@ module.exports = {
                             pass: keys.secrets.sendgridpass
                         }
                     });
-                    
                     var mailOptions = {
-                        from: "no-reply@foodbook223.com",
+                        from: "no-reply@CoolHands.com",
                         to: user.email,
-                        subject: "FoodBook Account Verification",
+                        subject: "CoolHands Account Verification",
                         text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/api\/confirmation\/' + token.token + '.\n'
                     };
                         transporter.sendMail(mailOptions, error => {

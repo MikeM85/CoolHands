@@ -5,7 +5,6 @@ const routes = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const HOST = "0.0.0.0";
 
 // Defines middleware
 app.use(express.urlencoded({ extended: true }));
@@ -19,15 +18,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-const db = require("./config/keys").MONGODB_URI;
-
-mongoose.connect(
-  db, {
-      useNewUrlParser: true
-  }
-)
-.then(() => console.log("Connected to MongoDB"))
-.catch(err => console.log(err));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/coolhands", { useNewUrlParser: true });
 
 //Passport Middleware
 app.use(passport.initialize());
@@ -36,6 +27,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Start the API server
-app.listen(PORT,HOST, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!!!!!`);
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
