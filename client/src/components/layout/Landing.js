@@ -19,12 +19,11 @@ class Landing extends Component {
 						<div className="row">
 							<div className="col-md-12 text-center">
 								<h1 className="display-3 mb-4">
-									<strong>FoodBook</strong>
+									<strong>CoolHands</strong>
 								</h1>
 								<p className="lead">
 									{" "}
-									Create a profile, share/rate your favorite restaurants and get
-									trusted reviews from your friends
+									Create a profile, put in a delivery order.
 								</p>
 								<hr />
 								<Link to="/dashboard" className="btn btn-lg btn-primary mr-2">
