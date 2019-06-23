@@ -121,7 +121,7 @@ class Register extends Component {
 			.then(results => {
 				this.setState({
 					modalState: "show-modal",
-					message: "HEY!!!"
+					message: "Thank you for signing up. Please go to the login page to login."
 				});
 			})
 
